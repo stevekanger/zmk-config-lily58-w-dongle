@@ -1,0 +1,5 @@
+/ {
+    chosen {
+        zmk,ble-central = &bluetooth;
+    };
+};
