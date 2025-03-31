@@ -64,37 +64,37 @@
             >;
         };
 
-        nav_layer {
-            display-name = "Nav";
+        lower_layer {
+            display-name = "Lower";
 
             // -----------------------------------------------------------------------------------------------------------------
-            // |  F1   |   F2  |   F3   |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |   F12   |
-            // |       |  S+F1 |  S+F2  | S+F3 | S+F4 |      |                   |      |  P_UP | P_DOWN|      | PRINT | NUMLOCk |
-            // | CAPS  |       |        |      |      |      |                   |  <-  |   v   |   ^   |  ->  |       |         |
-            // |       |       |        |      |      |      |        |  |       | DEL  |  HOME |  END  |      |       |         |
-            //                          |      |      |      |        |  |       |      |       |       |
+            // |  F1   |  F2 | F3  |  F4 |  F5 |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |   F12   |
+            // |       |     |  7  |  8  |  9  |      |                   |      |  P_UP | P_DOWN|      | PRINT | NUMLOCk |
+            // | CAPS  |     |  4  |  5  |  6  |      |                   |  <-  |   v   |   ^   |  ->  |       |         |
+            // |       |     |  1  |  2  |  3  |  0   |        |  |       | DEL  |  HOME |  END  |      |       |         |
+            //                           |     |      |        |  |       |      |       |       |      |
 
             bindings = <
 &kp F1    &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                    &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
-&trans    &S_F1   &S_F2   &S_F3   &S_F4   &trans                    &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
-&kp CAPS  &trans  &trans  &trans  &trans  &trans                    &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
-&trans    &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
+&trans    &trans  &kp N7  &kp N8  &kp N9  &trans                    &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
+&kp CAPS  &trans  &kp N4  &kp N5  &kp N6  &trans                    &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
+&trans    &trans  &kp N1  &kp N2  &kp N3  &kp N0  &trans    &trans  &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
                           &trans  &trans  &trans  &trans    &trans  &trans      &trans         &trans
             >;
         };
 
-        symbol_layer {
-            display-name = "Symbols";
+        raise_layer {
+            display-name = "Raise";
 
             // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |       |  ~  |  -  |  _   |  [   |  ]   |                   |      |   !   |   @   |  *   |       |       |
-            // |       |  `  |  +  |  =   |  (   |  )   |                   |      |   &   |   %   |  #   |       |       |
-            // |       |     |     |      |  {   |  }   |        |  |       |      |   $   |       |  ^   |       |       |
-            //                     |      |      |      |        |  |       |      |       |       |
+            // |       | S_F1 | S_F2 | S_F3 | S_F4 |      |                   |      |       |       |      |       |       |
+            // |       |  ~   |  -   |  _   |  [   |  ]   |                   |      |   !   |   @   |  *   |       |       |
+            // |       |  `   |  +   |  =   |  (   |  )   |                   |      |   &   |   %   |  #   |       |       |
+            // |       |      |      |      |  {   |  }   |        |  |       |      |   $   |       |  ^   |       |       |
+            //                       |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &trans     &trans     &trans          &trans                &trans                                   &trans  &trans         &trans       &trans        &trans         &trans
+&trans  &S_F1      &S_F2      &S_F3           &S_F4                 &trans                                   &trans  &trans         &trans       &trans        &trans         &trans
 &trans  &kp TILDE  &kp MINUS  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET                        &trans  &kp EXCL       &kp AT_SIGN  &kp ASTERISK  &kp PIPE       &trans
 &trans  &kp GRAVE  &kp PLUS   &kp EQUAL       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &trans  &kp AMPERSAND  &kp PERCENT  &kp HASH      &kp BACKSLASH  &trans
 &trans  &trans     &trans     &trans          &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans  &trans  &kp DOLLAR     &trans       &kp CARET     &trans         &trans
