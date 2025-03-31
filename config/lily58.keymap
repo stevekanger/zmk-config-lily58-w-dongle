@@ -5,14 +5,13 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-
     macros {
         S_F1: S_F1 {
             compatible = "zmk,behavior-macro";
@@ -50,18 +49,18 @@
             display-name = "Base";
 
             // ---------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                      |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                      |  Y   |  U    |  I    |  O   |   P   |   -   |
+            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                      |  6   |  7    |  8    |  9   |   0   |  BACK |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                      |  Y   |  U    |  I    |  O   |   P   |   [   |
             // |  LALT |  A  |  S  |  D   |  F   |  G   |                      |  H   |  J    |  K    |  L   |   ;   |   '   |
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  TOG_3  |  | POW_TOG |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //        | GUI  | CTRL  | BKSP/LOWER |  ENTER/SHIFT  |  | SPACE   | ESC/RAISE | CTRL  | GUI   |
+            //        | GUI  | CTRL  | BACK/LOWER |  ENTER/SHIFT  |  | SPACE   | ESC/RAISE | CTRL  | GUI   |
 
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                                    &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp GRAVE
-&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T                                     &kp Y      &kp U      &kp I      &kp O    &kp P     &kp MINUS
-&kp LALT   &kp A   &kp S   &kp D     &kp F      &kp G                                     &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B    &tog 3    &ext_power EP_TOG      &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-         &kp LGUI  &kp LCTRL  &lt 1 BACKSPACE   &mt LSHFT ENTER    &kp SPACE  &lt 2 ESC  &kp RCTRL  &kp RGUI
+&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                                                 &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T                                                  &kp Y      &kp U      &kp I      &kp O    &kp P     &kp LEFT_BRACKET
+&kp LALT   &kp A   &kp S   &kp D     &kp F      &kp G                                                  &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B            &tog 3             &ext_power EP_TOG  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                           &kp LGUI  &kp LCTRL  &lt 1 BACKSPACE  &mt LSHFT ENTER    &kp SPACE          &lt 2 ESC  &kp RCTRL  &kp RGUI
             >;
         };
 
@@ -69,18 +68,18 @@
             display-name = "Nav";
 
             // -----------------------------------------------------------------------------------------------------------------
-            // |  F1   |   F2  |   F3   |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |       |  S+F1 |  S+F2  | S+F3 | S+F4 |      |                   |      |  P_UP | P_DOWN|      | PRINT |       |
-            // | CAPS  |       |        |      |      |      |                   |  <-  |   v   |   ^   |  ->  |       |       |
-            // |       |       |        |      |      |      |        |  |       | DEL  |  HOME |  END  |      |       |       |
+            // |  F1   |   F2  |   F3   |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |   F12   |
+            // |       |  S+F1 |  S+F2  | S+F3 | S+F4 |      |                   |      |  P_UP | P_DOWN|      | PRINT | NUMLOCk |
+            // | CAPS  |       |        |      |      |      |                   |  <-  |   v   |   ^   |  ->  |       |         |
+            // |       |       |        |      |      |      |        |  |       | DEL  |  HOME |  END  |      |       |         |
             //                          |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1   &kp F2    &kp F3   &kp F4  &kp F5  &kp F6                     &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
-&trans   &S_F1     &S_F2    &S_F3   &S_F4   &trans                     &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &trans
-&kp CAPS &trans    &trans   &trans  &trans  &trans                     &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
-&trans   &trans    &trans   &trans  &trans  &trans   &trans    &trans  &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
-                            &trans  &trans  &trans   &trans    &trans  &trans      &trans         &trans
+&kp F1    &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                    &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
+&trans    &S_F1   &S_F2   &S_F3   &S_F4   &trans                    &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
+&kp CAPS  &trans  &trans  &trans  &trans  &trans                    &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
+&trans    &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
+                          &trans  &trans  &trans  &trans    &trans  &trans      &trans         &trans
             >;
         };
 
@@ -114,11 +113,11 @@
             //                     | ALT  | CAPS | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3          &kp N4     &kp N5                                  &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp GRAVE
-&kp TAB         &kp Q   &kp W   &kp E           &kp R      &kp T                                   &kp Y   &kp U     &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL       &kp A   &kp S   &kp D           &kp F      &kp G                                   &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LEFT_SHIFT  &kp Z   &kp X   &kp C           &kp V      &kp B   &tog 4       &ext_power EP_TOG  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                &kp LEFT_ALT    &kp CAPS   &mo 1   &kp SPACE    &kp RET   &mo 2    &kp BSPC  &kp RGUI
+&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4    &kp N5                                  &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp GRAVE
+&kp TAB         &kp Q   &kp W   &kp E         &kp R     &kp T                                   &kp Y   &kp U     &kp I      &kp O    &kp P     &kp MINUS
+&kp LCTRL       &kp A   &kp S   &kp D         &kp F     &kp G                                   &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LEFT_SHIFT  &kp Z   &kp X   &kp C         &kp V     &kp B   &tog 4       &ext_power EP_TOG  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                                &kp LEFT_ALT  &kp CAPS  &mo 1   &kp SPACE    &kp RET            &mo 2   &kp BSPC  &kp RGUI
             >;
         };
 
@@ -142,4 +141,3 @@
         };
     };
 };
-
