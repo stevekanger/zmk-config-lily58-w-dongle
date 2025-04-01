@@ -62,6 +62,8 @@
 &kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B            &tog 3             &ext_power EP_TOG  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                            &kp LGUI  &kp LCTRL  &lt 1 BACKSPACE  &mt LSHFT ENTER    &kp SPACE          &lt 2 ESC  &kp RCTRL  &kp RGUI
             >;
+
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
@@ -81,6 +83,8 @@
 &trans    &trans  &kp N1  &kp N2  &kp N3  &kp N0  &trans    &trans  &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
                           &trans  &trans  &trans  &trans    &trans  &trans      &trans         &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         raise_layer {
@@ -100,6 +104,8 @@
 &trans  &trans     &trans     &trans          &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans  &trans  &kp DOLLAR     &trans       &kp CARET     &trans         &trans
                               &trans          &trans                &trans                 &trans    &trans  &trans  &trans         &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         gaming_layer {
@@ -119,6 +125,8 @@
 &kp LEFT_SHIFT  &kp Z   &kp X   &kp C         &kp V     &kp B   &tog 4       &ext_power EP_TOG  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                                 &kp LEFT_ALT  &kp CAPS  &mo 1   &kp SPACE    &kp RET            &mo 2   &kp BSPC  &kp RGUI
             >;
+
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         keyboard_control_layer {
@@ -138,6 +146,8 @@
 &trans      &trans        &ext_power EP_OFF  &ext_power EP_ON  &ext_power EP_TOG  &trans        &tog 0    &ext_power EP_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans
                                              &trans            &trans             &trans        &trans    &trans             &trans           &trans           &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
