@@ -12,7 +12,20 @@
         zephyr,display = &oled;
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &kata0510_lily58_layout;
-        zmk,underglow = &led_strip;
+    };
+
+
+    connector {
+        compatible = "zmk,underglow";
+
+        led_strip: ws2812@0 {
+            compatible = "zmk,underglow";
+            label = "WS2812";
+            chain-length = <35>;
+            data-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+            color-order = <LED_COLOR_ORDER_GRB>;
+            status = "okay";
+        };
     };
 
     default_transform: keymap_transform_0 {
@@ -79,6 +92,4 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     };
 };
 
-&led_strip {
-    chain-length = <35>;
-};
+
