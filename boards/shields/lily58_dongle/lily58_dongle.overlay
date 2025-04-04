@@ -80,7 +80,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
 };
 
 &pro_micro {
-    led_strip: ws2812@0 {
+    led_strip: ws2812 {
         compatible = "ws2812-strip";
         gpios = <&pro_micro 5 GPIO_ACTIVE_HIGH>;
         chain-length = <35>;
