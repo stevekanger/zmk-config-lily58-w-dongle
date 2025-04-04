@@ -23,7 +23,7 @@
             label = "WS2812";
             chain-length = <35>;
             data-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
-            color-order = <LED_COLOR_ORDER_GRB>;
+            color-order = "grb";
             status = "okay";
         };
     };
