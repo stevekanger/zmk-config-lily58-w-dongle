@@ -12,9 +12,9 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/led/led.h>
 
-&led_strip {
-    chain-length = <35>;
-};
+// &led_strip {
+//     chain-length = <35>;
+// };
 
 / {
     macros {
