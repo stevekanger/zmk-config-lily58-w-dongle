@@ -6,7 +6,6 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <layouts/kata0510/lily58.dtsi>
-#include <dt-bindings/led/led.h>
 
 / {
     chosen {
@@ -14,26 +13,6 @@
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &kata0510_lily58_layout;
     };
-
-
-    connector {
-        compatible = "zmk,underglow";
-
-        led_strip: ws2812@0 {
-            compatible = "worldsemi,ws2812-spi";
-
-            /* SPI */
-            reg = <0>; /* ignored, but necessary for SPI bindings */
-            spi-max-frequency = <4000000>;
-
-            /* WS2812 */
-            chain-length = <35>; /* arbitrary; change at will */
-            spi-one-frame = <0x70>;
-            spi-zero-frame = <0x40>;
-
-            color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-        };
-    };   
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -98,5 +77,3 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         prechargep = <0x22>;
     };
 };
-
-
