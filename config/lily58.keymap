@@ -16,11 +16,11 @@
     chain-length = <35>;
 };
 
-/ {
-    &mt {
-        tapping-term-ms = <400>; // default 200
-    };
+&mt {
+    tapping-term-ms = <400>; // default 200
+};
 
+/ {
     macros {
         S_F1: S_F1 {
             compatible = "zmk,behavior-macro";
