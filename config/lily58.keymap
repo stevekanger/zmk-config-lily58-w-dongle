@@ -134,18 +134,18 @@
             display-name = "Control";
 
             // ---------------------------------------------------------------------------------------------------------------------------------------------------------
-            // | BTCLR |  BT1  |  BT2    |   BT3  |   BT4   |  BT5 |                   |          |             |              |             |  SYS_RESET   | BOOTLOADER |
-            // |       |       | BL_OFF  | BL_ON  | BL_TOG  |      |                   |          | BL +        | BL -         |             |              |            |
-            // |       |       | RGB_OFF | RGB_ON | RGB_TOG |      |                   | RGB_NEXT | RGB_BRIGHT+ | RGB_BRIGHT - | RGB_SPEED + |  RGB_SPEED - |            |
-            // |       |       | EP_OFF  | EP_ON  | EP_TOG  |      |  TOG_0 |  |       | RGB_PREV | RGB_HUE +   | RGB_HUE -    | RGB_SAT +   | RGB_SAT -    |            |
-            //                           |        |         |      |        |  |       |          |             |              |
+            // | BTCLR |  BT1  |  BT2    |     BT3    |   BT4   |  BT5 |                   |          |             |              |             |              | SYS_RESET |
+            // |       |       | BL_OFF  |   BL_ON    | BL_TOG  |      |                   |          | BL +        | BL -         |             |              |           |
+            // |       |       | RGB_OFF |   RGB_ON   | RGB_TOG |      |                   | RGB_NEXT | RGB_BRIGHT+ | RGB_BRIGHT - | RGB_SPEED + |  RGB_SPEED - |           |
+            // |       |       | EP_OFF  |   EP_ON    | EP_TOG  |      |  TOG_0 |  |       | RGB_PREV | RGB_HUE +   | RGB_HUE -    | RGB_SAT +   | RGB_SAT -    |           |
+            //                           | BOOTLOADER |         |      |        |  |       |          |             | BOOTLOADER   |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3       &bt BT_SEL 4                     &trans           &trans           &trans           &trans           &sys_reset       &bootloader
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3       &bt BT_SEL 4                     &trans           &trans           &trans           &trans           &trans       &sys_reset
 &trans      &trans        &bl BL_OFF         &bl BL_ON         &bl BL_TOG         &trans                           &trans           &bl BL_INC       &bl BL_DEC       &trans           &trans           &trans
 &trans      &trans        &rgb_ug RGB_OFF    &rgb_ug RGB_ON    &rgb_ug RGB_TOG    &trans                           &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &trans
 &trans      &trans        &ext_power EP_OFF  &ext_power EP_ON  &ext_power EP_TOG  &trans        &tog 4    &trans   &rgb_ug RGB_EFR  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans
-                                             &trans            &trans             &trans        &trans    &trans   &trans           &trans           &trans
+                                             &bootloader       &trans             &trans        &trans    &trans   &trans           &trans           &bootloader
             >;
         };
     };
