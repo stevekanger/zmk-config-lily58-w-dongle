@@ -61,6 +61,16 @@
                 , <&macro_release &kp LSHFT>
                 ;
         };
+
+        S_TAP: S_TAP {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp 0>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
     };
 
     keymap {
@@ -115,7 +125,7 @@
             //                       |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &S_F1      &S_F2           &S_F3           &S_F4                 &trans                                   &trans  &trans       &trans         &trans        &trans         &trans
+&trans  &S_TAP F1  &S_F2           &S_F3           &S_F4                 &trans                                   &trans  &trans       &trans         &trans        &trans         &trans
 &trans  &kp TILDE  &kp UNDERSCORE  &kp MINUS       &kp LEFT_BRACKET      &kp RIGHT_BRACKET                        &trans  &kp PERCENT  &kp AT_SIGN    &kp ASTERISK  &trans         &trans
 &trans  &kp GRAVE  &kp PLUS        &kp EQUAL       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &trans  &kp EXCL     &kp AMPERSAND  &kp HASH      &kp BACKSLASH  &trans
 &trans  &trans     &trans          &trans          &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans  &trans  &kp DOLLAR   &kp PIPE       &kp CARET     &trans         &trans
