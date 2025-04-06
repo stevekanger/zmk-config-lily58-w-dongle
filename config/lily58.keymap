@@ -22,12 +22,42 @@
 
 / {
     macros {
-        shift_tap: shift_tap {
+        S_F1: S_F1 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
-                , <&macro_tap $0>
+                , <&macro_tap &kp F1>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+
+        S_F2: S_F2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp F1>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+
+        S_F3: S_F3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp F1>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+
+        S_F4: S_F4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp F1>
                 , <&macro_release &kp LSHFT>
                 ;
         };
@@ -85,11 +115,11 @@
             //                       |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &shift_tap &kp F1 &shift_kp  &kpF2    &shift_kp &kp F3  &shift_kp &kp F4          &trans                                   &trans  &trans       &trans         &trans        &trans         &trans
-&trans  &kp TILDE    &kp UNDERSCORE  &kp MINUS     &kp LEFT_BRACKET      &kp RIGHT_BRACKET                        &trans  &kp PERCENT  &kp AT_SIGN    &kp ASTERISK  &trans         &trans
-&trans  &kp GRAVE    &kp PLUS        &kp EQUAL     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &trans  &kp EXCL     &kp AMPERSAND  &kp HASH      &kp BACKSLASH  &trans
-&trans  &trans       &trans          &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans  &trans  &kp DOLLAR   &kp PIPE       &kp CARET     &trans         &trans
-                                     &trans        &trans                &trans                 &trans    &trans  &trans  &trans       &trans
+&trans  &S_F1      &S_F2           &S_F3           &S_F4                 &trans                                   &trans  &trans       &trans         &trans        &trans         &trans
+&trans  &kp TILDE  &kp UNDERSCORE  &kp MINUS       &kp LEFT_BRACKET      &kp RIGHT_BRACKET                        &trans  &kp PERCENT  &kp AT_SIGN    &kp ASTERISK  &trans         &trans
+&trans  &kp GRAVE  &kp PLUS        &kp EQUAL       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &trans  &kp EXCL     &kp AMPERSAND  &kp HASH      &kp BACKSLASH  &trans
+&trans  &trans     &trans          &trans          &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans  &trans  &kp DOLLAR   &kp PIPE       &kp CARET     &trans         &trans
+                                   &trans          &trans                &trans                 &trans    &trans  &trans  &trans       &trans
             >;
         };
 
