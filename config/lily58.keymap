@@ -25,8 +25,12 @@
         S_F1: S_F1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt LSHFT &kp F1 &kt LSHFT>;
             label = "S_F1";
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp F1>
+                , <&macro_release &kp LSHFT>
+                ;
         };
 
         S_F2: S_F2 {
