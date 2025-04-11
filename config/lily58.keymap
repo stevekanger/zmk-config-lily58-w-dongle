@@ -61,6 +61,18 @@
                 , <&macro_release &kp LSHFT>
                 ;
         };
+
+        alt_ctl_del: alt_ctl_del {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp DEL>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LALT>
+                ;
+        };
     };
 
     behaviors {
@@ -106,11 +118,11 @@
             //                           |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp F1    &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                           &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
-&trans    &trans  &trans  &trans  &trans  &trans                           &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
-&kp CAPS  &trans  &trans  &trans  &trans  &trans                           &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
-&trans    &trans  &trans  &trans  &trans  &trans  &trans    &trans         &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
-                          &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp ESC     &trans         &trans
+&kp F1       &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                           &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
+&alt_ctl_del &trans  &trans  &trans  &trans  &trans                           &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
+&kp CAPS     &trans  &trans  &trans  &trans  &trans                           &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
+&trans       &trans  &trans  &trans  &trans  &trans  &trans    &trans         &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
+                             &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp ESC     &trans         &trans
             >;
         };
 
