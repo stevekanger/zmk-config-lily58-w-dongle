@@ -12,7 +12,6 @@
         zephyr,display = &oled;
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &kata0510_lily58_layout;
-        zmk,battery = &battery;
     };
 
     default_transform: keymap_transform_0 {
@@ -54,10 +53,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         triggers-per-rotation = <20>;
     };
 
-    battery: battery {
-        compatible = "zmk,battery-nrf-vddh";
-        label = "Battery";
-    };
 };
 
 &kata0510_lily58_layout {
