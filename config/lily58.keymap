@@ -110,7 +110,7 @@
 &kp TAB    &kp Q   &kp W     &kp E         &kp R      &kp T                     &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LEFT_BRACKET
 &kp LCTRL  &kp A   &kp S     &kp D         &kp F      &kp G                     &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X     &kp C         &kp V      &kp B    &trans   &to 5   &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                   &kp CAPS  &kp LEFT_ALT  &kp SPACE  &mo 3    &kp RET  &mo 3   &kp RCTRL  &kp RGUI
+                   &kp CAPS  &kp LEFT_ALT  &kp SPACE  &mo 2    &kp RET  &mo 3   &kp RCTRL  &kp RGUI
             >;
         };
 
