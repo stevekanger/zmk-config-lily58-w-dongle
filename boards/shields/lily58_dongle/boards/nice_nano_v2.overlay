@@ -42,5 +42,11 @@
 / {
     chosen {
         zmk,underglow = &led_strip;
+        zmk,battery = &vbatt;
+    };
+
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
     };
 };
