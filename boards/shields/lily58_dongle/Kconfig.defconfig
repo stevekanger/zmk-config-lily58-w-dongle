@@ -24,6 +24,9 @@ config BT_MAX_PAIRED
     default 6
 
 # Display stuff
+config CONFIG_ZMK_DISPLAY_BLANK_ON_IDLE
+    default n
+
 if LVGL
 
 config LV_Z_VDB_SIZE
