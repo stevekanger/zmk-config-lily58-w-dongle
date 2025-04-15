@@ -87,11 +87,11 @@
             display-name = "Base";
 
             // ---------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                      |  6   |  7    |  8    |  9   |   0   |  BACK |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                      |  Y   |  U    |  I    |  O   |   P   |   [   |
-            // |  LALT |  A  |  S  |  D   |  F   |  G   |                      |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  numpad  |  |  to_4  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //        | GUI  | CTRL  | BACK/LOWER |  ENTER/SHIFT   |  | SPACE   | ESC/RAISE | CTRL  | GUI   |
+            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                           |  6   |  7    |  8    |  9   |   0   |  BACK |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                           |  Y   |  U    |  I    |  O   |   P   |   [   |
+            // |  LALT |  A  |  S  |  D   |  F   |  G   |                           |  H   |  J    |  K    |  L   |   ;   |   '   |
+            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  numpad  |  |  TO GAMING  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+            //        | GUI  | CTRL  | BACK/LOWER |  ENTER/SHIFT   |  | SPACE       | ESC/RAISE | CTRL  | GUI   |
 
             bindings = <
 &kp ESC    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                                       &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
@@ -106,11 +106,11 @@
             display-name = "Gaming";
 
             // ----------------------------------------------------------------------------------------------------------------
-            // |   ESC  |  1  |  2  |  3   |   4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  BKSP |
-            // |   TAB  |  Q  |  W  |  E   |   R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   [   |
-            // |  CTRL  |  A  |  S  |  D   |   F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT  |  Z  |  X  |  C   |   V   |  B   |        |  |  to_5 |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //                      | CAPS |  ALT  | SPACE|  LOWER |  | ENTER | RAISE| CTRL  | GUI   |
+            // |   ESC  |  1  |  2  |  3   |   4   |  5   |                         |  6   |  7    |  8    |  9   |   0   |  BKSP |
+            // |   TAB  |  Q  |  W  |  E   |   R   |  T   |                         |  Y   |  U    |  I    |  O   |   P   |   [   |
+            // |  CTRL  |  A  |  S  |  D   |   F   |  G   |                         |  H   |  J    |  K    |  L   |   ;   |   '   |
+            // | SHIFT  |  Z  |  X  |  C   |   V   |  B   |        |  |  TO CONTROL |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+            //                      | CAPS |  ALT  | SPACE|  LOWER |  | ENTER       | RAISE| CTRL  | GUI   |
 
             bindings = <
 &kp ESC    &kp N1  &kp N2    &kp N3        &kp N4     &kp N5                                     &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
@@ -126,11 +126,11 @@
             display-name = "Numpad";
 
             // -----------------------------------------------------------------------------------------------------------------
-            // |   |   |   |   |   |   |             |     |     |     |     |   |   |
-            // |   |   |   |   |   |   |             |     |  7  |  8  |  9  |   |   |
-            // |   |   |   |   |   |   |             |     |  4  |  5  |  6  |   |   |
-            // |   |   |   |   |   |   | to_0 |      |  0  |  1  |  2  |  3  |   |   |
-            //             |   |   |   |      |      |     |     |     |     |
+            // |   |   |   |   |   |   |                |     |     |     |     |   |   |
+            // |   |   |   |   |   |   |                |     |  7  |  8  |  9  |   |   |
+            // |   |   |   |   |   |   |                |     |  4  |  5  |  6  |   |   |
+            // |   |   |   |   |   |   | TO BASE |      |  0  |  1  |  2  |  3  |   |   |
+            //             |   |   |   |         |      |     |     |     |     |
 
             bindings = <
 &trans    &trans  &trans  &trans  &trans  &trans                    &trans   &trans   &trans   &trans   &trans   &trans
@@ -143,14 +143,14 @@
 
 
         keyboard_control_layer {
-            display-name = "Keyboard Control";
+            display-name = "Board Ctl";
 
             // ---------------------------------------------------------------------------------------------------------------------------------------------------------
-            // | BTCLR |  BT1  |  BT2    |     BT3    |   BT4   |  BT5 |               |          |             |              |             |              | SYS_RESET |
-            // |       |       | BL_OFF  |   BL_ON    | BL_TOG  |      |               |          | BL +        | BL -         |             |              |           |
-            // |       |       | RGB_OFF |   RGB_ON   | RGB_TOG |      |               | RGB_NEXT | RGB_BRIGHT+ | RGB_BRIGHT - | RGB_SPEED + |  RGB_SPEED - |           |
-            // |       |       | EP_OFF  |   EP_ON    | EP_TOG  |      |     |  | to_0 | RGB_PREV | RGB_HUE +   | RGB_HUE -    | RGB_SAT +   | RGB_SAT -    |           |
-            //                           |            |         |      |     |  |      |          |             |              |
+            // | BTCLR |  BT1  |  BT2    |     BT3    |   BT4   |  BT5 |                  |          |             |              |             |              | SYS_RESET |
+            // |       |       | BL_OFF  |   BL_ON    | BL_TOG  |      |                  |          | BL +        | BL -         |             |              |           |
+            // |       |       | RGB_OFF |   RGB_ON   | RGB_TOG |      |                  | RGB_NEXT | RGB_BRIGHT+ | RGB_BRIGHT - | RGB_SPEED + |  RGB_SPEED - |           |
+            // |       |       | EP_OFF  |   EP_ON    | EP_TOG  |      |     |  | TO BASE | RGB_PREV | RGB_HUE +   | RGB_HUE -    | RGB_SAT +   | RGB_SAT -    |           |
+            //                           |            |         |      |     |  |         |          |             |              |
 
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3       &bt BT_SEL 4                      &trans           &trans           &trans           &trans           &trans       &sys_reset
