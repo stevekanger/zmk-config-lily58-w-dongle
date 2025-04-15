@@ -21,15 +21,6 @@
 };
 
 / {
-    chosen {
-        zmk,battery = &battery_node;
-    };
-
-    battery_node: battery {
-        compatible = "zmk,battery-nrf-vddh";
-        label = "BATTERY";
-    };
-
     macros {
         S_F1: S_F1 {
             compatible = "zmk,behavior-macro";
