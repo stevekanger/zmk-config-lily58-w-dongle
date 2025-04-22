@@ -185,16 +185,16 @@
 
             // ------------------------------------------------------------------------------------------------------------
             // |       | S_F1 | S_F2 | S_F3 | S_F4 |      |                   |      |       |       |      |       |       |
-            // |       |      |  _   |  -   |  {   |  }   |                   |      |   @   |   $   |  *   |       |       |
+            // |       |      |  _   |  -   |  [   |  ]   |                   |      |   @   |   $   |  *   |       |       |
             // |       |  `   |  +   |  =   |  (   |  )   |                   |      |   &   |   !   |  #   |   \   |       |
-            // |       |      |      |  ~   |  [   |  ]   |        |  |       |      |   %   |   |   |  ^   |       |       |
+            // |       |      |      |  ~   |  {   |  }   |        |  |       |      |   %   |   |   |  ^   |       |       |
             //                       |      |      |      |        |  |       |      |       |       |
 
             bindings = <
 &trans  &S_F1      &S_F2           &S_F3        &S_F4                 &trans                                   &trans  &trans         &trans         &trans        &trans         &trans
-&trans  &trans     &kp UNDERSCORE  &kp MINUS    &kp LEFT_BRACE        &kp RIGHT_BRACE                          &trans  &kp AT_SIGN    &kp DOLLAR     &kp ASTERISK  &trans         &trans
+&trans  &trans     &kp UNDERSCORE  &kp MINUS    &kp LEFT_BRACKET      &kp RIGHT_BRACKET                        &trans  &kp AT_SIGN    &kp DOLLAR     &kp ASTERISK  &trans         &trans
 &trans  &kp GRAVE  &kp PLUS        &kp EQUAL    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &trans  &kp AMPERSAND  &kp EXCL       &kp HASH      &kp BACKSLASH  &trans
-&trans  &trans     &trans          &kp TILDE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans  &trans  &kp PERCENT    &kp PIPE       &kp CARET     &trans         &trans
+&trans  &trans     &trans          &kp TILDE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans  &trans  &kp PERCENT    &kp PIPE       &kp CARET     &trans         &trans
                                    &trans       &trans                &trans                 &trans    &trans  &trans  &trans         &trans
             >;
         };
