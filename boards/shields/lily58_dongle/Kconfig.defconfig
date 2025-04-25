@@ -42,3 +42,12 @@ endchoice
 endif # LVGL
 
 endif
+
+# Display Font Size
+config LV_FONT_MONTSERRAT_20
+    default y
+
+choice LV_FONT_DEFAULT
+    default LV_FONT_DEFAULT_MONTSERRAT_20
+
+endchoice
