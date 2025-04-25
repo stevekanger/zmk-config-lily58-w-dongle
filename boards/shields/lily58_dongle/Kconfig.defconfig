@@ -42,10 +42,3 @@ endchoice
 endif # LVGL
 
 endif
-
-# Display Font Size
-choice ZMK_LV_FONT_DEFAULT_SMALL
-    default ZMK_LV_FONT_DEFAULT_SMALL_MONTSERRAT_16
-endchoice
-
-
