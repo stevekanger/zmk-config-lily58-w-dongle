@@ -44,10 +44,8 @@ endif # LVGL
 endif
 
 # Display Font Size
-config LV_FONT_MONTSERRAT_20
-    default y
-
-choice LV_FONT_DEFAULT
-    default LV_FONT_DEFAULT_MONTSERRAT_20
-
+choice ZMK_LV_FONT_DEFAULT_SMALL
+    default ZMK_LV_FONT_DEFAULT_SMALL_MONTSERRAT_16
 endchoice
+
+
