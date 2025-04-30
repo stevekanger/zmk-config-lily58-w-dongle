@@ -19,9 +19,9 @@
 #define LOWER            4
 #define RAISE            5
 
-&led_strip {
-    chain-length = <35>;
-};
+// &led_strip {
+//     chain-length = <35>;
+// };
 
 &mt {
     tapping-term-ms = <400>; // default 200
