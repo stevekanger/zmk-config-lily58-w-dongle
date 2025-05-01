@@ -28,48 +28,6 @@
 };
 
 / {
-    macros {
-        S_F1: S_F1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp F1>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-
-        S_F2: S_F2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp F2>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-
-        S_F3: S_F3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp F3>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-
-        S_F4: S_F4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp F4>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-    };
-
     behaviors {
         mo_to: behavior_mo_tog {
             compatible = "zmk,behavior-hold-tap";
@@ -165,18 +123,18 @@
             display-name = "Lower";
 
             // -----------------------------------------------------------------------------------------------------------------
-            // |  F1   |  F2 | F3  |  F4 |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |   F12   |
-            // |       |     |     |     |      |      |                   |      |  P_UP | P_DOWN|      | PRINT | NUMLOCk |
-            // | CAPS  |     |     |     |      |      |                   |  <-  |   v   |   ^   |  ->  |       |         |
-            // |       |     |     |     |      |      |        |  |       | DEL  |  HOME |  END  |      |       |         |
-            //                           |      |      |        |  |       |      |       |       |      |
+            // |  F1   |   F2 | F3   |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |   F12   |
+            // |       |      |      |      |      |      |                   |      |  P_UP | P_DOWN|      | PRINT | NUMLOCk |
+            // | CAPS  | SU_4 | SU_3 | SU_2 | SU_1 |      |                   |  <-  |   v   |   ^   |  ->  |       |         |
+            // |       |      |      |      |      |      |        |  |       | DEL  |  HOME |  END  |      |       |         |
+            //                              |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp F1   &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                           &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
-&kp CAPS &trans  &trans  &trans  &trans  &trans                           &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
-&trans   &trans  &trans  &trans  &trans  &trans                           &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
-&trans   &trans  &trans  &trans  &trans  &trans  &trans    &trans         &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
-                         &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp ESC     &trans         &trans
+&kp F1   &kp F2     &kp F3     &kp F4     &kp F5     &kp F6                           &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
+&kp CAPS &trans     &trans     &trans     &trans     &trans                           &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
+&trans   &kp LG(N4) &kp LG(N3) &kp LG(N2) &kp LG(N1) &trans                           &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
+&trans   &trans     &trans     &trans     &trans     &trans  &trans    &trans         &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
+                               &trans     &trans     &trans  &trans    &kp BACKSPACE  &kp ESC     &trans         &trans
             >;
         };
 
@@ -191,7 +149,7 @@
             //                       |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &S_F1      &S_F2           &S_F3        &S_F4                 &trans                                    &trans   &trans         &trans       &trans          &trans     &trans
+&trans  &kp LS(F1) &kp LS(F2)      &kp LS(F3)   &kp LS(F4)            &trans                                    &trans   &trans         &trans       &trans          &trans     &trans
 &trans  &trans     &kp UNDERSCORE  &kp MINUS    &kp LEFT_BRACE        &kp RIGHT_BRACE                           &trans   &kp ASTERISK   &kp DOLLAR   &kp AT_SIGN     &trans     &trans
 &trans  &trans     &kp PLUS        &kp EQUAL    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                     &trans   &kp AMPERSAND  &kp EXCL     &kp HASH        &kp CARET  &trans
 &trans  &trans     &kp GRAVE       &kp TILDE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans   &trans   &kp PERCENT    &kp PIPE     &kp BACKSLASH   &trans     &trans
