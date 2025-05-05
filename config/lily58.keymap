@@ -27,6 +27,10 @@
     tapping-term-ms = <400>; // default 200
 };
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 / {
     behaviors {
         mo_to: behavior_mo_tog {
@@ -131,8 +135,8 @@
 
             bindings = <
 &kp F1   &kp F2     &kp F3   &kp F4   &kp F5   &kp F6                           &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
-&kp CAPS &trans     &trans   &trans   &trans   &trans                           &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
-&trans   &trans     &trans   &trans   &trans   &trans                           &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
+&trans   &trans     &trans   &trans   &trans   &trans                           &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
+&kp CAPS &trans     &trans   &trans   &trans   &trans                           &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
 &trans   &trans     &trans   &trans   &trans   &trans  &trans    &trans         &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
                              &trans   &trans   &trans  &trans    &kp BACKSPACE  &kp ESC     &trans         &trans
             >;
@@ -149,10 +153,10 @@
             //                       |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &kp LS(F1) &kp LS(F2)      &kp LS(F3)   &kp LS(F4)            &trans                                    &trans   &trans         &trans       &trans          &trans     &trans
-&trans  &trans     &kp UNDERSCORE  &kp MINUS    &kp LEFT_BRACE        &kp RIGHT_BRACE                           &trans   &kp ASTERISK   &kp DOLLAR   &kp AT_SIGN     &trans     &trans
-&trans  &trans     &kp PLUS        &kp EQUAL    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                     &trans   &kp AMPERSAND  &kp EXCL     &kp HASH        &kp CARET  &trans
-&trans  &trans     &kp GRAVE       &kp TILDE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans   &trans   &kp PERCENT    &kp PIPE     &kp BACKSLASH   &trans     &trans
+&trans      &kp LS(F1) &kp LS(F2)      &kp LS(F3)   &kp LS(F4)            &trans                                    &trans   &trans         &trans       &trans          &trans     &trans
+&trans      &trans     &kp UNDERSCORE  &kp MINUS    &kp LEFT_BRACE        &kp RIGHT_BRACE                           &trans   &kp ASTERISK   &kp DOLLAR   &kp AT_SIGN     &trans     &trans
+&caps_word  &trans     &kp PLUS        &kp EQUAL    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                     &trans   &kp AMPERSAND  &kp EXCL     &kp HASH        &kp CARET  &trans
+&trans      &trans     &kp GRAVE       &kp TILDE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans   &trans   &kp PERCENT    &kp PIPE     &kp BACKSLASH   &trans     &trans
                                    &trans       &trans                &trans                 &trans    &trans   &trans   &trans         &trans
             >;
         };
