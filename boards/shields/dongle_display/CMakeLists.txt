@@ -13,7 +13,7 @@ if(CONFIG_ZMK_DISPLAY AND CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM AND ((NOT CONF
     zephyr_library_sources(custom_status_screen.c)
     zephyr_library_sources(widgets/battery_status.c)
     zephyr_library_sources(widgets/layer_status.c)
-    zephyr_library_sources(widgets/hid_indicators.c)
+    # zephyr_library_sources(widgets/hid_indicators.c)
 endif()
 
 

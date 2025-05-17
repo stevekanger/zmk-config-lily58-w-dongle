@@ -7,7 +7,7 @@
 #include "custom_status_screen.h"
 #include "widgets/battery_status.h"
 #include "widgets/layer_status.h"
-#include "widgets/hid_indicators.h"
+// #include "widgets/hid_indicators.h"
 #include <zmk/display/widgets/output_status.h>
 
 #include <zephyr/logging/log.h>
@@ -16,7 +16,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 static lv_style_t global_style;
 static lv_style_t alternate_font_style;
 
-static struct zmk_widget_hid_indicators hid_indicators_widget;
+// static struct zmk_widget_hid_indicators hid_indicators_widget;
 static struct zmk_widget_output_status output_status_widget;
 static struct zmk_widget_layer_status layer_status_widget;
 static struct zmk_widget_dongle_battery_status dongle_battery_status_widget;
@@ -35,7 +35,7 @@ lv_obj_t *zmk_display_status_screen() {
     // Create a specific style for the output status widget
     lv_style_init(&alternate_font_style);
     lv_style_set_text_font(&alternate_font_style,
-                           &lv_font_montserrat_12); // Different font size
+                           &lv_font_montserrat_16); // Different font size
 
     // Output status widget
     zmk_widget_output_status_init(&output_status_widget, screen);
@@ -44,10 +44,10 @@ lv_obj_t *zmk_display_status_screen() {
     lv_obj_align(output_status_obj, LV_ALIGN_TOP_LEFT, 0, 0);
 
     // HID indicators widget
-    zmk_widget_hid_indicators_init(&hid_indicators_widget, screen);
-    lv_obj_t *hid_indicators_obj = zmk_widget_hid_indicators_obj(&hid_indicators_widget);
-    lv_obj_add_style(hid_indicators_obj, &alternate_font_style, LV_PART_MAIN);
-    lv_obj_align(hid_indicators_obj, LV_ALIGN_TOP_LEFT, 0, 20);
+    // zmk_widget_hid_indicators_init(&hid_indicators_widget, screen);
+    // lv_obj_t *hid_indicators_obj = zmk_widget_hid_indicators_obj(&hid_indicators_widget);
+    // lv_obj_add_style(hid_indicators_obj, &alternate_font_style, LV_PART_MAIN);
+    // lv_obj_align(hid_indicators_obj, LV_ALIGN_TOP_LEFT, 0, 20);
 
     // Layer status widget
     zmk_widget_layer_status_init(&layer_status_widget, screen);
