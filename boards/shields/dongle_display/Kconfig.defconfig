@@ -15,7 +15,7 @@ config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
     select LV_USE_ANIMATION
     select LV_USE_LINE 
     select LV_FONT_MONTSERRAT_20
-    select LV_FONT_MONTSERRAT_16
+    select LV_FONT_MONTSERRAT_12
 
 config LV_Z_MEM_POOL_SIZE
     default 8192

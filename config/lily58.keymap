@@ -28,7 +28,7 @@
 };
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS>;
+    continue-list = <UNDERSCORE MINUS BACKSPACE>;
 };
 
 / {
@@ -54,10 +54,9 @@
             // |  LALT |  A  |  S  |  D   |  F   |  G   |                           |  H   |  J    |  K    |  L   |   ;   |   '   |
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  numpad  |  |  TO GAMING  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             //        | GUI  | CTRL  | BACK/LOWER |  ENTER/SHIFT   |  | SPACE       | RAISE | CTRL  | GUI   |
-
             bindings = <
 &kp ESC    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                                       &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T                                        &kp Y      &kp U      &kp I      &kp O    &kp P     &kp LEFT_BRACKET
+&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T                                        &kp Y      &kp U      &kp I      &kp O    &kp P     &kp RALT
 &kp LALT   &kp A   &kp S   &kp D     &kp F      &kp G                                        &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B      &mo_to NUMPAD NUMPAD  &to GAMING  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                            &kp LGUI  &kp LCTRL  &mo LOWER  &mt LSHFT ENTER       &kp SPACE   &mo RAISE  &kp RCTRL  &kp RGUI
@@ -115,11 +114,11 @@
             //                           |            |         |      |     |  |         |          |             |              |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3       &bt BT_SEL 4                      &trans           &trans           &trans           &trans           &trans       &sys_reset
-&trans      &trans        &bl BL_OFF         &bl BL_ON         &bl BL_TOG         &trans                            &trans           &bl BL_INC       &bl BL_DEC       &trans           &trans           &trans
-&trans      &trans        &rgb_ug RGB_OFF    &rgb_ug RGB_ON    &rgb_ug RGB_TOG    &trans                            &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &trans
-&trans      &trans        &ext_power EP_OFF  &ext_power EP_ON  &ext_power EP_TOG  &trans        &trans    &to BASE  &rgb_ug RGB_EFR  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans
-                                             &trans            &trans             &trans        &trans    &trans    &trans           &trans           &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                      &trans           &trans           &trans           &trans           &trans       &sys_reset
+&trans      &trans        &trans         &trans         &trans         &trans                            &trans           &bl BL_INC       &bl BL_DEC       &trans           &trans           &trans
+&trans      &trans        &trans         &trans         &trans         &trans                            &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &trans
+&trans      &trans        &trans         &trans         &trans         &trans        &trans    &to BASE  &rgb_ug RGB_EFR  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans
+                                         &trans         &trans         &trans        &trans    &trans    &trans           &trans           &trans
             >;
         };
 
@@ -129,7 +128,7 @@
             // -----------------------------------------------------------------------------------------------------------------
             // |  F1   |   F2 | F3   |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |   F12   |
             // |       |      |      |      |      |      |                   |      |  P_UP | P_DOWN|      | PRINT | NUMLOCk |
-            // | CAPS  |      | SU_3 | SU_2 | SU_1 |      |                   |  <-  |   v   |   ^   |  ->  |       |         |
+            // | CAPS  |      |      |      |      |      |                   |  <-  |   v   |   ^   |  ->  |       |         |
             // |       |      |      |      |      |      |        |  |       | DEL  |  HOME |  END  |      |       |         |
             //                              |      |      |        |  |       | BACK |  ESC  |       |      |
 
@@ -146,11 +145,11 @@
             display-name = "Raise";
 
             // ------------------------------------------------------------------------------------------------------------
-            // |       | S_F1 | S_F2 | S_F3 | S_F4 |      |                   |      |       |       |      |       |       |
-            // |       |      |  _   |  -   |  {   |  }   |                   |      |   *   |   $   |  @   |       |       |
-            // |       |      |  +   |  =   |  (   |  )   |                   |      |   &   |   !   |  #   |   ^   |       |
-            // |       |      |  `   |  ~   |  [   |  ]   |        |  |       |      |   %   |   |   |  \   |       |       |
-            //                       |      |      |      |        |  |       |      |       |       |
+            // |           | S_F1 | S_F2 | S_F3 | S_F4 |      |                   |      |       |       |      |       |       |
+            // |           |      |  _   |  -   |  {   |  }   |                   |      |   *   |   $   |  @   |       |       |
+            // | caps_word |      |  +   |  =   |  (   |  )   |                   |      |   &   |   !   |  #   |   ^   |       |
+            // |           |      |  `   |  ~   |  [   |  ]   |        |  |       |      |   %   |   |   |  \   |       |       |
+            //                           |      |      |      |        |  |       |      |       |       |
 
             bindings = <
 &trans      &kp LS(F1) &kp LS(F2)      &kp LS(F3)   &kp LS(F4)            &trans                                    &trans   &trans         &trans       &trans          &trans     &trans
