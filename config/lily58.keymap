@@ -16,8 +16,9 @@
 #define GAMING           1
 #define NUMPAD           2
 #define KEYBOARD_CONTROL 3
-#define LOWER            4
-#define RAISE            5
+#define LAYERS           4
+#define LOWER            5
+#define RAISE            6
 
 // &led_strip {
 //     chain-length = <35>;
@@ -40,7 +41,7 @@
             tapping-term-ms = <400>;
             bindings = <&mo>, <&to>;
         };
-      };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -48,24 +49,26 @@
         default_layer {
             display-name = "Base";
 
+            // Base keyboard layer
             // ---------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                           |  6   |  7    |  8    |  9   |   0   |  BACK |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                           |  Y   |  U    |  I    |  O   |   P   |   [   |
-            // |  LALT |  A  |  S  |  D   |  F   |  G   |                           |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  numpad  |  |  TO GAMING  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //        | GUI  | CTRL  | BACK/LOWER |  ENTER/SHIFT   |  | SPACE       | RAISE | CTRL  | GUI   |
+            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                              |   6   |  7    |  8    |  9   |   0   |  BACK |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                              |   Y   |  U    |  I    |  O   |   P   |   [   |
+            // |  LALT |  A  |  S  |  D   |  F   |  G   |                              |   H   |  J    |  K    |  L   |   ;   |   '   |
+            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  numpad  |     |  TO GAMING  |   N   |  M    |  ,    |  .   |   /   | SHIFT |
+            //                     | GUI  | CTRL | LOWER| ENTER/SHIFT |  | SPACE       | RAISE |  CTRL | GUI   |
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                                       &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T                                        &kp Y      &kp U      &kp I      &kp O    &kp P     &kp RALT
-&kp LALT   &kp A   &kp S   &kp D     &kp F      &kp G                                        &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B      &mo_to NUMPAD NUMPAD  &to GAMING  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LGUI  &kp LCTRL  &mo LOWER  &mt LSHFT ENTER       &kp SPACE   &mo RAISE  &kp RCTRL  &kp RGUI
+&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                                     &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T                                      &kp Y      &kp U      &kp I      &kp O    &kp P     &kp RALT
+&kp LALT   &kp A   &kp S   &kp D     &kp F      &kp G                                      &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B      &trans          &mo LAYERS      &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                           &kp LGUI  &kp LCTRL  &mo LOWER  &kp ENTER       &kp SPACE       &mo RAISE  &kp RCTRL  &kp RGUI
             >;
         };
 
         gaming_layer {
             display-name = "Gaming";
 
+            // Gaming keyboard layer
             // ----------------------------------------------------------------------------------------------------------------
             // |   ESC  |  1  |  2  |  3   |   4   |  5   |                         |  6   |  7    |  8    |  9   |   0   |  BKSP |
             // |   TAB  |  Q  |  W  |  E   |   R   |  T   |                         |  Y   |  U    |  I    |  O   |   P   |   [   |
@@ -74,11 +77,11 @@
             //                      | CAPS |  ALT  | SPACE|  LOWER |  | ENTER       | RAISE| CTRL  | GUI   |
 
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3        &kp N4     &kp N5                                     &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB    &kp Q   &kp W     &kp E         &kp R      &kp T                                      &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LEFT_BRACKET
-&kp LCTRL  &kp A   &kp S     &kp D         &kp F      &kp G                                      &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X     &kp C         &kp V      &kp B      &trans   &to KEYBOARD_CONTROL   &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                   &kp CAPS  &kp LEFT_ALT  &mo LOWER  &kp SPACE  &kp RET  &mo RAISE              &kp RCTRL  &kp RGUI
+&kp ESC    &kp N1  &kp N2    &kp N3        &kp N4     &kp N5                             &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB    &kp Q   &kp W     &kp E         &kp R      &kp T                              &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LEFT_BRACKET
+&kp LCTRL  &kp A   &kp S     &kp D         &kp F      &kp G                              &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X     &kp C         &kp V      &kp B      &trans   &trans         &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                   &kp CAPS  &kp LEFT_ALT  &mo LOWER  &kp SPACE  &kp RET  &mo RAISE      &kp RCTRL  &kp RGUI
             >;
         };
 
@@ -86,18 +89,19 @@
         numpad_layer {
             display-name = "Numpad";
 
+            // Numpad keyboard layer
             // -----------------------------------------------------------------------------------------------------------------
-            // |   |   |   |   |   |   |                |     |     |     |     |   |   |
-            // |   |   |   |   |   |   |                |     |  7  |  8  |  9  |   |   |
-            // |   |   |   |   |   |   |                |     |  4  |  5  |  6  |   |   |
-            // |   |   |   |   |   |   | TO BASE |      |  0  |  1  |  2  |  3  |   |   |
-            //             |   |   |   |         |      |     |     |     |     |
+            // |   |   |   |   |   |   |         |     |     |     |     |   |   |
+            // |   |   |   |   |   |   |         |     |  7  |  8  |  9  |   |   |
+            // |   |   |   |   |   |   |         |     |  4  |  5  |  6  |   |   |
+            // |   |   |   |   |   |   |   |  |  |  0  |  1  |  2  |  3  |   |   |
+            //             |   |   |   |   |  |  |     |     |     |
 
             bindings = <
 &trans    &trans  &trans  &trans  &trans  &trans                    &trans   &trans   &trans   &trans   &trans   &trans
 &trans    &trans  &trans  &trans  &trans  &trans                    &trans   &kp N7   &kp N8   &kp N9   &trans   &trans
 &trans    &trans  &trans  &trans  &trans  &trans                    &trans   &kp N4   &kp N5   &kp N6   &trans   &trans
-&trans    &trans  &trans  &trans  &trans  &trans  &to BASE  &trans  &kp N0   &kp N1   &kp N2   &kp N3   &trans   &trans
+&trans    &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N0   &kp N1   &kp N2   &kp N3   &trans   &trans
                           &trans  &trans  &trans  &trans    &trans  &trans   &trans   &trans
             >;
         };
@@ -106,6 +110,7 @@
         keyboard_control_layer {
             display-name = "Board Ctl";
 
+            // Controls the keyboard functiions like bluetooth, rgb, ect
             // ---------------------------------------------------------------------------------------------------------------------------------------------------------
             // | BTCLR |  BT1  |  BT2    |     BT3    |   BT4   |  BT5 |                  |          |             |              |             |              | SYS_RESET |
             // |       |       | BL_OFF  |   BL_ON    | BL_TOG  |      |                  |          | BL +        | BL -         |             |              |           |
@@ -113,12 +118,33 @@
             // |       |       | EP_OFF  |   EP_ON    | EP_TOG  |      |     |  | TO BASE | RGB_PREV | RGB_HUE +   | RGB_HUE -    | RGB_SAT +   | RGB_SAT -    |           |
             //                           |            |         |      |     |  |         |          |             |              |
 
+
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                      &trans           &trans           &trans           &trans           &trans       &sys_reset
 &trans      &trans        &trans         &trans         &trans         &trans                            &trans           &bl BL_INC       &bl BL_DEC       &trans           &trans           &trans
 &trans      &trans        &trans         &trans         &trans         &trans                            &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &trans
-&trans      &trans        &trans         &trans         &trans         &trans        &trans    &to BASE  &rgb_ug RGB_EFR  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans
+&trans      &trans        &trans         &trans         &trans         &trans        &trans    &trans    &rgb_ug RGB_EFR  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans
                                          &trans         &trans         &trans        &trans    &trans    &trans           &trans           &trans
+            >;
+        };
+
+        layers_layer {
+            display-name = "Layers";
+
+            // Select which layer to toggle
+            // -----------------------------------------------------------------------------------------------------------------
+            // |   |  BASE  | GAMING  | NUMPAD  | KEYBOARD_CONTROL  |   |                   |    |    |    |    |    |   |
+            // |   |        |         |         |                   |   |                   |    |    |    |    |    |   |
+            // |   |        |         |         |                   |   |                   |    |    |    |    |    |   |
+            // |   |        |         |         |                   |   |   |   |       |   |    |    |    |    |    |
+            //                                                          |   |   |       |   |    |    |    |    |    |
+
+            bindings = <
+&trans    &to BASE  &to GAMING  &to NUMPAD  &to KEYBOARD_CONTROL  &trans                    &trans   &trans   &trans   &trans   &trans   &trans
+&trans    &trans    &trans      &trans      &trans                &trans                    &trans   &trans   &trans   &trans   &trans   &trans
+&trans    &trans    &trans      &trans      &trans                &trans                    &trans   &trans   &trans   &trans   &trans   &trans
+&trans    &trans    &trans      &trans      &trans                &trans  &trans    &trans  &trans   &trans   &trans   &trans   &trans   &trans
+                                &trans      &trans                &trans  &trans    &trans  &trans   &trans   &trans
             >;
         };
 
