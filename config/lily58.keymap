@@ -172,16 +172,16 @@
 
             // ------------------------------------------------------------------------------------------------------------
             // |           | S_F1 | S_F2 | S_F3 | S_F4 |      |                   |      |       |       |      |       |       |
-            // |           |      |  _   |  -   |  {   |  }   |                   |      |   *   |   $   |  @   |       |       |
+            // |           |      |  _   |  -   |  [   |  ]   |                   |      |   *   |   $   |  @   |       |       |
             // | caps_word |      |  +   |  =   |  (   |  )   |                   |      |   &   |   !   |  #   |   ^   |       |
-            // |           |      |  `   |  ~   |  [   |  ]   |        |  |       |      |   %   |   |   |  \   |       |       |
+            // |           |      |  `   |  ~   |  {   |  }   |        |  |       |      |   %   |   |   |  \   |       |       |
             //                           |      |      |      |        |  |       |      |       |       |
 
             bindings = <
 &trans      &kp LS(F1) &kp LS(F2)      &kp LS(F3)   &kp LS(F4)            &trans                                    &trans   &trans         &trans       &trans          &trans     &trans
-&trans      &trans     &kp UNDERSCORE  &kp MINUS    &kp LEFT_BRACE        &kp RIGHT_BRACE                           &trans   &kp ASTERISK   &kp DOLLAR   &kp AT_SIGN     &trans     &trans
+&trans      &trans     &kp UNDERSCORE  &kp MINUS    &kp LEFT_BRACKET      &kp RIGHT_BRACKET                         &trans   &kp ASTERISK   &kp DOLLAR   &kp AT_SIGN     &trans     &trans
 &caps_word  &trans     &kp PLUS        &kp EQUAL    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                     &trans   &kp AMPERSAND  &kp EXCL     &kp HASH        &kp CARET  &trans
-&trans      &trans     &kp GRAVE       &kp TILDE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans   &trans   &kp PERCENT    &kp PIPE     &kp BACKSLASH   &trans     &trans
+&trans      &trans     &kp GRAVE       &kp TILDE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans   &trans   &kp PERCENT    &kp PIPE     &kp BACKSLASH   &trans     &trans
                                        &trans       &trans                &trans                 &trans    &trans   &trans   &trans         &trans
             >;
         };
