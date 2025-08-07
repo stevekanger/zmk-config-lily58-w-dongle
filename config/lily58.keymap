@@ -188,11 +188,11 @@
             //                              |      |      |        |  |       | BACK |  ESC  |       |      |
 
             bindings = <
-&kp F1   &kp F2     &kp F3   &kp F4   &kp F5   &kp F6                           &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
-&trans   &trans     &trans   &trans   &trans   &trans                           &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
-&kp CAPS &trans     &trans   &trans   &trans   &trans                           &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
-&trans   &trans     &trans   &trans   &trans   &trans  &trans    &trans         &kp DELETE  &kp HOME       &kp END      &trans     &trans           &trans
-                             &trans   &trans   &trans  &trans    &kp BACKSPACE  &kp ESC     &trans         &trans
+&kp F1    &kp F2     &kp F3   &kp F4   &kp F5   &kp F6                           &kp F7      &kp F8         &kp F9       &kp F10    &kp F11          &kp F12
+&trans    &trans     &trans   &trans   &trans   &trans                           &trans      &kp PAGE_DOWN  &kp PAGE_UP  &trans     &kp PRINTSCREEN  &kp KP_NUMLOCK
+&kp CAPS  &trans     &trans   &trans   &trans   &trans                           &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans           &trans
+&trans    &trans     &trans   &trans   &trans   &trans  &trans    &trans         &trans      &trans         &kp HOME     &kp END    &trans           &trans
+                              &trans   &trans   &trans  &trans    &kp BACKSPACE  &kp ESC     &trans         &trans
 
             >;
         };
@@ -210,8 +210,8 @@
             bindings = <
 &tdlayers   &kp LS(F1) &kp LS(F2)      &kp LS(F3)   &kp LS(F4)            &trans                                       &trans   &trans         &trans       &trans          &trans         &trans
 &trans      &trans     &kp UNDERSCORE  &kp MINUS    &kp LEFT_BRACKET      &kp RIGHT_BRACKET                            &trans   &kp ASTERISK   &kp DOLLAR   &kp AT_SIGN     &trans         &trans
-&trans      &trans     &kp PLUS        &kp EQUAL    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                        &trans   &kp AMPERSAND  &kp EXCL     &kp HASH        &trans         &trans
-&trans      &trans     &kp GRAVE       &kp TILDE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans       &trans   &trans   &kp PERCENT    &kp PIPE     &kp CARET       &kp BACKSLASH  &trans
+&trans      &trans     &kp PLUS        &kp EQUAL    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                        &trans   &kp AMPERSAND  &kp EXCL     &kp HASH        &trans         &kp GRAVE
+&trans      &trans     &trans          &kp TILDE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans       &trans   &trans   &kp PERCENT    &kp PIPE     &kp CARET       &kp BACKSLASH  &trans
                                        &trans       &trans                &trans                 &trans       &trans   &trans   &trans         &trans
             >;
         };
