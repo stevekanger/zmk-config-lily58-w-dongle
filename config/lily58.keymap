@@ -119,13 +119,13 @@
             // |  TAB     |  Q  |  W  |  E   |  R   |   T   |                            |   Y   |   U   |   I   |  O   |   P   |   DEL |
             // | CAPSWORD |  A  |  S  |  D   |  F   |   G   |                            |   H   |   J   |   K   |  L   |   ;   |   '   |
             // | SHIFT    |  Z  |  X  |  C   |  V   |   B   |  GUI  |  |  GUI    |   N   |   M   |   ,   |  .   |   /   | SHIFT |
-            //                        | ALT  | CTRL | LOWER | ENTER |  | SPACE   | RAISE |  CTRL |  ALT  |
+            //                        | GUI  | CTRL | LOWER | ENTER |  | SPACE   | RAISE |  CTRL |  GUI  |
             bindings = <
 &kp ESC     &kp N1  &kp N2  &kp N3     &kp N4     &kp N5                               &kp N6      &kp N7     &kp N8      &kp N9    &kp N0    &kp BACKSPACE
 &kp TAB     &kp Q   &kp W   &kp E      &kp R      &kp T                                &kp Y       &kp U      &kp I       &kp O     &kp P     &kp DEL
 &caps_word  &kp A   &kp S   &kp D      &kp F      &kp G                                &kp H       &kp J      &kp K       &kp L     &kp SEMI  &kp SQT 
 &kp LSHFT   &kp Z   &kp X   &kp C      &kp V      &kp B       &tdalt       &tdalt      &kp N       &kp M      &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
-                            &tdgui     &kp LCTRL  &mo LOWER   &kp ENTER    &kp SPACE   &mo RAISE   &kp RCTRL  &tdgui
+                            &kp LGUI   &kp LCTRL  &mo LOWER   &kp ENTER    &kp SPACE   &mo RAISE   &kp RCTRL  &kp RGUI
             >;
         };
 
